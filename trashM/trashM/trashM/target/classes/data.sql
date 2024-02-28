@@ -1,0 +1,1 @@
+insert into trash values (1, 111, 'sajid', CURRENT_TIMESTAMP, 222);
