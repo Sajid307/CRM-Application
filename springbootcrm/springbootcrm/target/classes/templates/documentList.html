@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Document List</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<h1>Document List</h1>
+<div class="search">
+<input type="text" id="search" onkeyup="searchTable()" placeholder="Search...">
+</div>
+<table id="documents">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Contacts</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optum</td>
+<td>.jpg</td>
+<td>7878090876</td>
+<td>
+<a th:href="@{/edit/{id}(id=${document.id)}">Edit</a>
+<a th:href="@{/delete/{id}(id=${document.id)}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="add">
+<a href ="newform.html" >Add Document</a>
+</div>
+</body>
+</html>

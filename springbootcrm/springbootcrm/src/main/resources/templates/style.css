@@ -1,0 +1,51 @@
+@charset "ISO-8859-1";
+.search {
+margin: 10px 0;
+}
+input[type="text"] {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+/* Style the table */
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+text-align: left;
+padding: 8px;
+border-bottom: 1px solid #ddd;
+}
+th {
+background-color: #4CAF50;
+color: white;
+}
+/* Style the buttons */
+.add, td a {
+display: inline-block;
+padding: 8px 16px;
+margin: 10px 0;
+border-radius: 4px;
+text-decoration: none;
+background-color: #4CAF50;
+color: white;
+}
+.edit, .delete {
+background-color: #f44336;
+}
+.add:hover, td a:hover {
+background-color: #3e8e41;
+}
+.edit:hover {
+background-color: #da1e0e;
+}
+.delete:hover {
+background-color: #ff6f5e;
+}
+.add:active, .edit:active, .delete:active {
+background-color: #3e8e41;
+transform: translateY(1px);
+}

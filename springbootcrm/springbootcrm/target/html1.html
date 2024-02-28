@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="style22.css">
+</head>
+<body>
+<h1>Document</h1>
+<div class="entry-form">
+<h2>Add/Edit Entry</h2>
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="type" placeholder="Type">
+<input type="text" id="tags" placeholder="Tags (comma-separated)">
+<input type="text" id="contacts" placeholder="Contacts (comma-separated)">
+<button onclick="saveEntry()">Save</button>
+<button onclick="updateEntry()">Update</button>
+</div>
+<div class="search-form">
+<h2>Search Entries</h2>
+<input type="text" id="searchTerm" placeholder="Search term">
+<button onclick="searchEntries()">Search</button>
+</div>
+<div id="entries" class="entries">
+<!-- Entries will be dynamically added here -->
+</div>
+<script src="script22.js"></script>
+</body>
+</html>

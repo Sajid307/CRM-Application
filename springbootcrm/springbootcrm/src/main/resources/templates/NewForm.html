@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Document Form</title>
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>New Form</h1>
+		<hr>
+		<h2>Save Document</h2>
+
+		<form action="#" th:action="@{/saveDocument}" th:object="${document}"
+			method="POST">
+			<h5>Title*</h5>
+			<input type="text" th:field="*{documentName}"
+				placeholder="Document Name" class="form-control mb-4 col-4" required>
+				
+				<h5>Related Contacts*</h5>
+				<input type="text" th:field="*{contactName}"
+				placeholder="Contact Name" class="form-control mb-4 col-4" required>
+				
+				<h5>Type</h5>
+				<input type="text" th:field="*{type}"
+				placeholder="type" class="form-control mb-4 col-4">
+				
+				<h5>Tag</h5>
+				<input type="text" th:field="*{tag}"
+				placeholder="tag" class="form-control mb-4 col-4">
+				
+				<h5>Please upload the file</h5>
+				<form action="/upload" method="POST" enctype="multipart/form-data">
+				<input type="file" name="file" accept=".txt,.pdf,.doc,.docx">
+				<br><br>
+				<input type="submit" value="Upload">
+				</form>
+				
+				
+				<button type="submit" class="btn btn-info col-2"> Save Document</button>
+		</form>	
+		<hr>
+		
+    	<a href="documentList.html">
+       <button class="add-btn">Back to Home Page</button>
+        </a>
+	</div>
+</body>
+</html>

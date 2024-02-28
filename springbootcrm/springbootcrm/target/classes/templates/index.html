@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Document List</title>
+<style>
+.search {
+margin: 10px 0;
+}
+input[type="text"] {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+/* Style the table */
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+text-align: left;
+padding: 8px;
+border-bottom: 1px solid #ddd;
+}
+th {
+background-color: #4CAF50;
+color: white;
+}
+/* Style the buttons */
+.add, td a {
+display: inline-block;
+padding: 8px 16px;
+margin: 10px 0;
+border-radius: 4px;
+text-decoration: none;
+background-color: #4CAF50;
+color: white;
+}
+.edit, .delete {
+display: inline-block;
+padding: 8px 16px;
+margin: 10px 0;
+border-radius: 4px;
+text-decoration: none;
+background-color: #4CAF50;
+color: white;
+}
+.add:hover, td a:hover {
+background-color: #3e8e41;
+}
+.edit:hover {
+background-color: #3e8e41;
+}
+.delete:hover {
+background-color: #3e8e41;
+}
+.add:active, .edit:active, .delete:active {
+background-color: #3e8e41;
+transform: translateY(1px);
+}
+</style>
+</head>
+<body>
+<h1>Document List</h1>
+<div class="search">
+<input type="text" id="search" onkeyup="searchTable()" placeholder="Search...">
+</div>
+<table id="documents">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Tag</th>
+<th>Contacts</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<c:forEach items="${data}" var="i">
+<tr>
+	<td>${i.documentName}</td>
+	<td>${i.typeOfDoc}</td>
+	<td>${i.contacts}</td>
+	<td>${i.tags}</td>
+	<td><a href="/updatepage/${i.id}" class="edit">Edit</a>
+	<button class="delete" onclick="deleteName(this)">Delete</button>
+	</td>	
+</tr>
+</c:forEach>
+</tr>
+</tbody>
+</table>
+<div class="add">
+<a href="/showdeleteForm">Add Document</a>
+</div>
+</body>
+</html>

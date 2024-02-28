@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Document List</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Document List</h1>
+<div class="search">
+<input type="text" id="search" onkeyup="searchTable()" placeholder="Search...">
+</div>
+<table id="documents">
+<thead>
+<tr>
+<th>DocumentName</th>
+<th>TypeOfDoc</th>
+<th>Contacts</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="document : ${documents}">
+<td th:text="${document.documentName"></td>
+<td th:text="${document.typeOfDoc"></td>
+<td th:text="${document.contacts"></td>
+<td>
+<a th:href="@{/edit/{id}(id=${document.id})}">Edit</a>
+<a th:href="@{/edit/{id}(id=${document.id})}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="add"
+<a href="/new">Add Document</a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+
